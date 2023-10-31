@@ -1,0 +1,31 @@
+# permissions for end users to edit e2eautomations.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: e2eautomation-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: orca-e2e-automation
+    app.kubernetes.io/part-of: orca-e2e-automation
+    app.kubernetes.io/managed-by: kustomize
+  name: e2eautomation-editor-role
+rules:
+- apiGroups:
+  - orca.paermini.com
+  resources:
+  - e2eautomations
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - orca.paermini.com
+  resources:
+  - e2eautomations/status
+  verbs:
+  - get

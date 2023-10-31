@@ -1,0 +1,12 @@
+apiVersion: orca.paermini.com/v1beta1
+kind: E2EAutomation
+metadata:
+  labels:
+    app.kubernetes.io/name: e2eautomation
+    app.kubernetes.io/instance: e2eautomation-sample
+    app.kubernetes.io/part-of: orca-e2e-automation
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: orca-e2e-automation
+  name: e2eautomation-sample
+spec:
+  # TODO(user): Add fields here
