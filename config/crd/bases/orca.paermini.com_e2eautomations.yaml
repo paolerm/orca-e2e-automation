@@ -35,7 +35,11 @@ spec:
           spec:
             description: E2EAutomationSpec defines the desired state of E2EAutomation
             properties:
-              opcuaServerDiscoveryUrl:
+              id:
+                type: string
+              imageId:
+                type: string
+              schedule:
                 type: string
               settings:
                 properties:
@@ -60,13 +64,18 @@ spec:
                     - url
                     - user
                     type: object
+                  opcuaServerDiscoveryUrl:
+                    type: string
                   retryPolicy:
                     type: integer
                 required:
                 - endpoint
+                - opcuaServerDiscoveryUrl
                 type: object
             required:
-            - opcuaServerDiscoveryUrl
+            - id
+            - imageId
+            - schedule
             - settings
             type: object
           status:

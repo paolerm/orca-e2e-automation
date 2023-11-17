@@ -21,25 +21,28 @@ import (
 )
 
 type User struct {
-	Username	string	`json:"username"`
-	Password	string	`json:"password"`
+	Username string `json:"username"`
+	Password string `json:"password"`
 }
 
 type Endpoint struct {
-	Id		string	`json:"id"`
-	Url		string	`json:"url"`
-	User	User	`json:"user"`
+	Id   string `json:"id"`
+	Url  string `json:"url"`
+	User User   `json:"user"`
 }
 
 type Settings struct {
-	Endpoint 	Endpoint	`json:"endpoint"`
-	RetryPolicy	int			`json:"retryPolicy,omitempty"`
+	Endpoint                Endpoint `json:"endpoint"`
+	RetryPolicy             int      `json:"retryPolicy,omitempty"`
+	OpcuaServerDiscoveryUrl string   `json:"opcuaServerDiscoveryUrl"`
 }
 
 // E2EAutomationSpec defines the desired state of E2EAutomation
 type E2EAutomationSpec struct {
-	Settings 					Settings 	`json:"settings"`
-	OpcuaServerDiscoveryUrl		string		`json:"opcuaServerDiscoveryUrl"`
+	Id       string   `json:"id"`
+	ImageId  string   `json:"imageId"`
+	Schedule string   `json:"schedule"`
+	Settings Settings `json:"settings"`
 }
 
 // E2EAutomationStatus defines the observed state of E2EAutomation
